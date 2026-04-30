@@ -1,0 +1,248 @@
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AimMode V2 Tuan Anh - VIP</title>
+    <link rel="stylesheet" href="style.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<script src="key.js?v=20"></script>
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <audio id="background-music">
+        <source src="https://files.catbox.moe/wody9q.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1 class="title">
+                <span class="title-main">AIMMODE V2 TUAN ANH - VIP</span>
+                <span class="title-flag">🇻🇳</span>
+            </h1>
+            <div class="header-controls">
+                <button class="control-btn settings-btn" onclick="toggleSettings()">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn minimize-btn" onclick="minimizeMenu()">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="performance-monitor">
+            <div class="perf-item">
+                <span class="perf-label">CPU:</span>
+                <span class="perf-value" id="cpu-usage">45%</span>
+            </div>
+            <div class="perf-item">
+                <span class="perf-label">FPS:</span>
+                <span class="perf-value" id="fps-counter">144</span>
+            </div>
+            <div class="perf-item">
+                <span class="perf-label">PING:</span>
+                <span class="perf-value" id="ping-value">28ms</span>
+            </div>
+        </div>
+		<div class="target-display inside">
+    <div class="human-silhouette">
+        <div class="target-dot head-dot" data-part="head"></div>
+        <div class="target-dot shoulder-dot" data-part="shoulder"></div>
+        <div class="target-dot arm-left-dot" data-part="arms"></div>
+        <div class="target-dot arm-right-dot" data-part="arms"></div>
+        <div class="target-dot torso-dot" data-part="torso"></div>
+        <div class="target-dot leg-left-dot" data-part="legs"></div>
+        <div class="target-dot leg-right-dot" data-part="legs"></div>
+    </div>
+</div>
+        <div class="features-section">
+            <h3 class="section-title">Chức Năng AimHead V2 ⚙️</h3>
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>Aim Đầu</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="aim-head" class="toggle-input">
+                    <label for="aim-head" class="toggle-label" data-feature="head"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-hand-paper"></i>
+                    <span>Aim Ngực</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="aim-shoulder" class="toggle-input">
+                    <label for="aim-shoulder" class="toggle-label" data-feature="shoulder"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-lock"></i>
+                    <span>Aim Vai</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="aim-arms" class="toggle-input">
+                    <label for="aim-arms" class="toggle-label" data-feature="arms"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Aim Body</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="aim-torso" class="toggle-input">
+                    <label for="aim-torso" class="toggle-label" data-feature="torso"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Aim Chân</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="aim-legs" class="toggle-input">
+                    <label for="aim-legs" class="toggle-label" data-feature="legs"></label>
+                </div>
+            </div>
+        </div>
+        <div class="features-section">
+            <h3 class="section-title">Chức Năng Hỗ Trợ</h3>
+            
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-eye"></i>
+                    <span>Nhẹ Tâm</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="esp-vision" class="toggle-input">
+                    <label for="esp-vision" class="toggle-label" data-feature="esp"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Mượt Máy</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="speed-hack" class="toggle-input">
+                    <label for="speed-hack" class="toggle-label" data-feature="speed"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Tăng FPS</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="no-recoil" class="toggle-input">
+                    <label for="no-recoil" class="toggle-label" data-feature="recoil"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-ghost"></i>
+                    <span>Bám Đầu</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="wall-hack" class="toggle-input">
+                    <label for="wall-hack" class="toggle-label" data-feature="wallhack"></label>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-label">
+                    <i class="fas fa-fire"></i>
+                    <span>Tăng CPU Máy</span>
+                </div>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="auto-fire" class="toggle-input">
+                    <label for="auto-fire" class="toggle-label" data-feature="autofire"></label>
+                </div>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button class="action-btn export-btn" onclick="exportConfig()">
+                <i class="fas fa-download"></i>
+                <span>Xuất Config</span>
+            </button>
+            <button class="action-btn import-btn" onclick="importConfig()">
+                <i class="fas fa-upload"></i>
+                <span>Nhập Config</span>
+            </button>
+        </div>
+    </div>
+    <div class="settings-panel" id="settings-panel">
+        <div class="settings-header">
+            <h3>Settings</h3>
+            <button class="close-btn" onclick="toggleSettings()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="settings-content">
+            <div class="setting-item">
+                <label for="theme-select">Theme:</label>
+                <select id="theme-select" class="setting-select">
+                    <option value="default">Default</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="particles-toggle">Particles:</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="particles-toggle" class="toggle-input" checked>
+                    <label for="particles-toggle" class="toggle-label"></label>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label for="sound-effects">Sound Effects:</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="sound-effects" class="toggle-input" checked>
+                    <label for="sound-effects" class="toggle-label"></label>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label for="opacity-slider">Menu Opacity:</label>
+                <input type="range" id="opacity-slider" min="50" max="100" value="90" class="setting-slider">
+            </div>
+        </div>
+    </div>
+    <div class="notification-container" id="notification-container"></div>
+    <input type="file" id="config-file-input" accept=".json" style="display: none;">
+<script src="app.js?v=8"></script>
+<div class="contact-admin">
+     <div class="contact-admin">
+    <div class="contact-text">Liên hệ Admin hỗ trợ / Gia hạn key</div>
+    
+    <div class="contact-icons">
+        <a href="https://zalo.me/0969618762" target="_blank" class="contact-btn zalo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" class="contact-logo">
+            <span>Zalo</span>
+        </a>
+
+        <a href="https://www.facebook.com/share/1MKBGC52wW/?mibextid=wwXIfr" target="_blank" class="contact-btn facebook">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </a>
+
+        <!-- Zalo Box -->
+        <a href="https://zalo.me/g/txzbry231" target="_blank" class="contact-btn zalo-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" class="contact-logo">
+            <span>Zalo Box</span>
+        </a>
+    </div>
+</div>
+</body>
+</html>
