@@ -772,3 +772,28 @@ body {
 .contact-btn.zalo-box {
     background: linear-gradient(45deg, #0068ff, #00cfff);
 }
+#lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lock-box {
+    color: #ff3b3b;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 30px;
+    border: 2px solid red;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px red;
+    font-family: 'Orbitron', sans-serif;
+}
