@@ -249,5 +249,14 @@
         </a>
     </div>
 </div>
+	<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // disable click toàn bộ
+    document.body.style.pointerEvents = "none";
+
+    // vẫn cho phép bấm vào thông báo
+    document.getElementById("lock-screen").style.pointerEvents = "all";
+});
+</script>
 </body>
 </html>
