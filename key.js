@@ -124,7 +124,7 @@
 
 <div id="eliteUI">
   <div class="box">
-    <div class="title">⚡ Aim Head V2</div>
+    <div class="title">⚡ Aim Mode V2</div>
 
     <div class="label">MÃ KÍCH HOẠT</div>
     <div class="row">
